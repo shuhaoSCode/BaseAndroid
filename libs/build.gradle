@@ -1,15 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -26,6 +26,36 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:25.3.1'
+
+    //https://github.com/daimajia/AndroidViewAnimations（动画框架）
+    compile 'com.android.support:support-compat:25.1.1'
+    compile 'com.daimajia.easing:library:2.0@aar'
+    compile 'com.daimajia.androidanimations:library:2.3@aar'
+
+    //https://github.com/daimajia/NumberProgressBar （加载线内嵌数字）
+    compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+
+    //https://github.com/Blankj/AndroidUtilCode （常用工具类库）
+    compile 'com.blankj:utilcode:1.9.0'
+
+    //https://github.com/shuhaoSCode/AndroidUIImageView（防止图片内存溢出的控件）
+    compile 'com.github.shuhaoSCode:AndroidUIImageView:v1.0.0'
+
+    //https://github.com/JakeWharton/butterknife (依赖注入)
+    compile 'com.jakewharton:butterknife:8.8.1'
+
+    //https://github.com/hongyangAndroid/okhttputils (okhttp封装)
+    compile 'com.zhy:okhttputils:2.6.2'
+
+    //https://github.com/hongyangAndroid/baseAdapter（三个列表适配器封装）
+    compile 'com.zhy:base-rvadapter:3.0.3'
+    compile 'com.zhy:base-adapter:3.0.3'
+
+    //https://github.com/hongyangAndroid/AndroidAutoLayout（屏幕适配）
+    compile 'com.zhy:autolayout:1.4.5'
+
     testCompile 'junit:junit:4.12'
 }
