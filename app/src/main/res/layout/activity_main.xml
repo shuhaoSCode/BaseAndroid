@@ -11,5 +11,4 @@
         android:layout_height="100px"
         android:layout_centerInParent="true"
         android:text="Button" />
-
 </RelativeLayout>
