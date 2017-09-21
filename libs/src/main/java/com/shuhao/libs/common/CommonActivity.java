@@ -1,7 +1,6 @@
 package com.shuhao.libs.common;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 
 import com.blankj.utilcode.util.ToastUtils;
