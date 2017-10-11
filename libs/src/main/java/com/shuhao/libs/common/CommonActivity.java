@@ -1,5 +1,6 @@
 package com.shuhao.libs.common;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -29,4 +30,13 @@ public abstract class CommonActivity extends AutoLayoutActivity {
         ToastUtils.showLong(toast.toString());
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
