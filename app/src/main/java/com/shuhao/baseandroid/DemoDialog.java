@@ -44,4 +44,5 @@ public class DemoDialog extends CommonDialog {
     void dialog_btn_close() {
         dismiss();
     }
+
 }

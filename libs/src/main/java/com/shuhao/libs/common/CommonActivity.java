@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.shuhao.libs.utils.DialogPool;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import butterknife.ButterKnife;
@@ -33,6 +34,7 @@ public abstract class CommonActivity extends AutoLayoutActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        DialogPool.reShow(this);
     }
 
     @Override

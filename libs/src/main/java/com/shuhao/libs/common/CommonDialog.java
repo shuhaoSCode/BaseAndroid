@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.blankj.utilcode.util.ScreenUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.shuhao.libs.R;
 
 import butterknife.ButterKnife;
@@ -23,8 +24,9 @@ public abstract class CommonDialog extends Dialog {
 
     Context context;
     Dialog dialog;
-
     public boolean isShow;
+
+    private CommonDialogLinstener commonDialogLinstener;
 
     public CommonDialog(@NonNull Context context) {
         super(context);
@@ -36,6 +38,11 @@ public abstract class CommonDialog extends Dialog {
         isShow = false;
     }
 
+    /**
+     * [显示]
+     *
+     * @return
+     */
     public void show() {
         dialog.show();
         //设置屏幕大小
@@ -44,15 +51,29 @@ public abstract class CommonDialog extends Dialog {
         isShow = true;
     }
 
+    /**
+     * [关闭]
+     *
+     * @return
+     */
     public void dismiss() {
+        isShow = false;
         dialog.dismiss();
         onDismiss();
-        isShow = false;
+        if (commonDialogLinstener != null) {
+            commonDialogLinstener.onDismiss();
+        }
     }
+
+    /**
+     * [重新显示]
+     *
+     * @return
+     */
 
     public void reShow() {
         if (isShow) {
-            dismiss();
+            cancel();
             show();
         }
     }
@@ -102,5 +123,16 @@ public abstract class CommonDialog extends Dialog {
         dlg.getWindow().setAttributes(lp);
     }
 
+    public void setCommonDialogLinstener(CommonDialogLinstener baseDialogLinstener) {
+        this.commonDialogLinstener = baseDialogLinstener;
+    }
+
+    public interface CommonDialogLinstener {
+        void onDismiss();
+    }
+
+    protected void getToast(Object toast) {
+        ToastUtils.showLong(toast.toString());
+    }
 
 }
