@@ -52,13 +52,27 @@ public abstract class CommonDialog extends Dialog {
     }
 
     /**
-     * [关闭]
+     * [关闭 dismiss]
      *
      * @return
      */
     public void dismiss() {
         isShow = false;
         dialog.dismiss();
+        onDismiss();
+        if (commonDialogLinstener != null) {
+            commonDialogLinstener.onDismiss();
+        }
+    }
+
+    /**
+     * [关闭 cancel]
+     *
+     * @return
+     */
+    public void cancel() {
+        isShow = false;
+        dialog.cancel();
         onDismiss();
         if (commonDialogLinstener != null) {
             commonDialogLinstener.onDismiss();
@@ -129,6 +143,8 @@ public abstract class CommonDialog extends Dialog {
 
     public interface CommonDialogLinstener {
         void onDismiss();
+
+        void onCancel();
     }
 
     protected void getToast(Object toast) {
