@@ -17,11 +17,11 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 public class L {
 
     public static void d(Object object) {
-        Logger.d(object);
+        Logger.d("❤❤❤\n" + object);
     }
 
     public static void e(Object object) {
-        Logger.e(object.toString());
+        Logger.e("_(:зゝ∠)_\n" + object.toString());
     }
 
     public static void i(Object object) {
@@ -29,7 +29,7 @@ public class L {
     }
 
     public static void v(Object object) {
-        Logger.v(object.toString());
+        Logger.v("★★★\n" + object.toString());
     }
 
     public static void w(Object object) {
@@ -71,7 +71,7 @@ public class L {
 
         String listS = "";
         for (int i = 0; i < list.size(); i++) {
-            listS += i + ": " + list.get(i).toString() + ",\n";
+            listS += i + ": " + list.get(i).toString() + "\n";
         }
         d(listS);
     }

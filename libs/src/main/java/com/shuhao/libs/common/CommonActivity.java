@@ -1,5 +1,7 @@
 package com.shuhao.libs.common;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,11 +17,17 @@ import butterknife.ButterKnife;
  */
 
 public abstract class CommonActivity extends AutoLayoutActivity {
+
+    public Context mContext;
+    public Activity mActivity;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(bindLayout());
         ButterKnife.bind(this);
+        mContext = this;
+        mActivity = (CommonActivity) mContext;
         onCreate();
     }
 

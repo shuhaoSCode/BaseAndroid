@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.shuhao.libs.common.CommonDialog;
+import com.shuhao.libs.utils.L;
 
 import butterknife.OnClick;
 
@@ -22,7 +23,7 @@ public class DemoDialog extends CommonDialog {
 
     @Override
     protected void initDialog() {
-        Log.e(TAG, "initDialog");
+        L.d("initDialog");
     }
 
     @Override
@@ -32,12 +33,12 @@ public class DemoDialog extends CommonDialog {
 
     @Override
     protected void onShow() {
-        Log.e(TAG, "onShow");
+        L.d("onShow");
     }
 
     @Override
     protected void onDismiss() {
-        Log.e(TAG, "onDismiss");
+        L.d("onDismiss");
     }
 
     @OnClick(R.id.dialog_btn_close)
